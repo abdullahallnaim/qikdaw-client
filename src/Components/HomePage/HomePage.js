@@ -15,7 +15,7 @@ const HomePage = () => {
     const [loading, setLoading] = useState(false)
     const history = useHistory()
     useEffect(() => {
-        axios.get('http://localhost:5000/userinfo?id=' + getUser)
+        axios.get('http://qikdaw.com:5000/userinfo?id=' + getUser)
             .then((response) => response.data)
             .then(data => {
                 if (data) {

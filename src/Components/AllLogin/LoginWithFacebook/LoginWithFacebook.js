@@ -18,7 +18,7 @@ const LoginWithFacebook = () => {
     const [user, setUser] = useState([])
     useEffect(() => {
 
-        fetch('http://localhost:5000/data')
+        fetch('http://qikdaw.com:5000/data')
             .then(res => res.json())
             .then(data => {
                 setUser(data)
@@ -39,7 +39,7 @@ const LoginWithFacebook = () => {
                 history.replace(from)
                 localStorage.setItem('loggedIn', x.id)
             } else {
-                axios.post('http://localhost:5000/users', signedInWithFb)
+                axios.post('http://qikdaw.com:5000/users', signedInWithFb)
                     .then(response => {
                         if (response) {
                             history.replace(from)

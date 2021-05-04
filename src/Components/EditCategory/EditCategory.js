@@ -32,7 +32,7 @@ const EditCategory = ({ email, data }) => {
                 sitelink: values.sitelink,
                 email: email
             }
-            fetch(`http://localhost:5000/editcategory`, {
+            fetch(`http://qikdaw.com:5000/editcategory`, {
                 method: 'PUT',
                 body: JSON.stringify(newCategory),
                 headers: {

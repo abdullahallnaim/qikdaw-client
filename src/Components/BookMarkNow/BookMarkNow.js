@@ -41,7 +41,7 @@ const BookMarkNow = ({ email, bookmarkdata, category }) => {
             newCategory.append('email', usermail)
             newCategory.append('sitename', values.sitename)
             newCategory.append('sitelink', values.sitelink)
-            fetch('http://localhost:5000/bookmark', {
+            fetch('http://qikdaw.com:5000/bookmark', {
                 method: 'POST',
                 // headers: {
                 //     'Content-Type': 'application/json'

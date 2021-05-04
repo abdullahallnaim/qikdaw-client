@@ -34,7 +34,7 @@ const LoginWithEmail = () => {
     const [user, setUser] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/data')
+        fetch('http://qikdaw.com:5000/data')
             .then((response) => response.json())
             .then(data => {
                 if (data) {
@@ -91,7 +91,7 @@ const LoginWithEmail = () => {
                 userData.append('nofile', true);
             }
 
-            fetch('http://localhost:5000/users', {
+            fetch('http://qikdaw.com:5000/users', {
                 method: 'POST',
                 // headers: { 'Content-Type': 'application/json' },
                 body: userData,

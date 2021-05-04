@@ -21,7 +21,7 @@ const Login = () => {
  
     useEffect(() => {
 
-        fetch('http://localhost:5000/data')
+        fetch('http://qikdaw.com:5000/data')
             .then(res => res.json())
             .then(data => {
                 setUser(data)

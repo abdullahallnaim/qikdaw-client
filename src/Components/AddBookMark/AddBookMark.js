@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-// import './BookMarkNow.css'
 import { useFormik } from 'formik'
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import { Checkbox } from 'antd';
-import Footer from '../Footer/Footer';
 import back from '../../back.png'
 import plus from '../../plus.png'
 
@@ -12,11 +9,6 @@ const AddBookMark = ({ email, category }) => {
     const usermail = email
     const [status, setStatus] = useState(false)
     const [categoryValue, setCategoryValue] = useState([])
-    const [count, setCount] = useState(false)
-    const [showCat, setShowCat] = useState(true)
-    const [newCat, setNewCat] = useState(false)
-    const [existingCat, setExistingCat] = useState('')
-    const history = useHistory()
     const [loading, setLoading] = useState(true)
     const formik = useFormik({
         initialValues: {
@@ -30,11 +22,10 @@ const AddBookMark = ({ email, category }) => {
             setLoading(false)
             const newCategory = new FormData()
             newCategory.append('category', category)
-            console.log(categoryValue)
             newCategory.append('email', usermail)
             newCategory.append('sitename', values.sitename)
             newCategory.append('sitelink', values.sitelink)
-            fetch('http://localhost:5000/bookmark', {
+            fetch('http://qikdaw.com:5000/bookmark', {
                 method: 'POST',
                 // headers: {
                 //     'Content-Type': 'application/json'
@@ -72,22 +63,6 @@ const AddBookMark = ({ email, category }) => {
 
         }
     })
-
-
-    // const handleClicked = () => {
-    //     setNewCat(true)
-    //     setCount(true)
-    // }
-    // const CatArr = []
-    // let key = 0
-    // bookmarkdata.map((x, id) => {
-    //     CatArr.push(x.category)
-    //     key = id
-    // })
-    // const catArr = []
-    // function onChange(checkedValues) {
-    //     setCategoryValue(checkedValues)
-    // }
 
     return (
         <div style={{ minHeight: '75vh' }}>

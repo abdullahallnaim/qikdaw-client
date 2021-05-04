@@ -21,7 +21,7 @@ const UserProfile = () => {
     const [manageError, setManageError] = useState('')
     const history = useHistory()
     useEffect(() => {
-        axios.get('http://localhost:5000/userinfo?id=' + getUser)
+        axios.get('http://qikdaw.com:5000/userinfo?id=' + getUser)
             .then((response) => response.data)
             .then(data => {
                 if (data) {
@@ -54,7 +54,7 @@ const UserProfile = () => {
 
             if (status.edit) {
                 if (values.name) {
-                    fetch(`http://localhost:5000/user`, {
+                    fetch(`http://qikdaw.com:5000/user`, {
                         method: 'PUT',
                         body: JSON.stringify({
                             type: 'edit',
@@ -79,7 +79,7 @@ const UserProfile = () => {
 
                 }
                 if (values.email) {
-                    fetch(`http://localhost:5000/user`, {
+                    fetch(`http://qikdaw.com:5000/user`, {
                         method: 'PUT',
                         body: JSON.stringify({
                             type: 'edit',
@@ -108,7 +108,7 @@ const UserProfile = () => {
 
             }
             if (status.passChange) {
-                fetch(`http://localhost:5000/user`, {
+                fetch(`http://qikdaw.com:5000/user`, {
                     method: 'PUT',
                     body: JSON.stringify({
                         type: 'pass',

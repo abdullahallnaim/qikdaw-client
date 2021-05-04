@@ -42,7 +42,7 @@ const Bookmark = ({ email }) => {
         setIsModalVisible(false);
     };
     useEffect(() => {
-        axios.get('http://localhost:5000/bookmarkinfo')
+        axios.get('http://qikdaw.com:5000/bookmarkinfo')
             .then((response) => response.data)
             .then(data => {
                 if (data) {
@@ -129,7 +129,7 @@ const Bookmark = ({ email }) => {
 
     const handleOk = (e) => {
         setLoading(false)
-        fetch(`http://localhost:5000/deletebookmark?email=${email}&&category=${siteId.category}&&sitename=${bookdata}`, {
+        fetch(`http://qikdaw.com:5000/deletebookmark?email=${email}&&category=${siteId.category}&&sitename=${bookdata}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
